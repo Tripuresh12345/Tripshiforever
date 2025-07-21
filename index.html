@@ -3,66 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <title>Tripshiforever</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ Important for mobile -->
   <link rel="stylesheet" href="./style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+    }
+
+    #background-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    .Container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 15px;
+    }
+
+    .Picture, .Picture-video {
+      width: 90%;
+      max-width: 300px;
+      margin: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .Picture-img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .Picture-video video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .btn {
+      background-color: #ff69b4;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #ff4e9b;
+    }
+
+    .video-button {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0 15px;
+    }
+  </style>
 </head>
 <body>
-   <h1 style="text-align: center; margin-top: 20px; color: white; background: rgba(0, 0, 0, 0.5); padding: 10px;">Slide the pictures</h1>
+
+  <h1>Slide the pictures</h1>
 
   <video autoplay muted loop id="background-video">
     <source src="cinnamoroll-flying-in-clouds.1920x1080.mp4" type="video/mp4">
     Your browser does not support the video tag.
-</video>
-<style>
-    #background-video {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        min-width: 100%;
-        min-height: 100%;
-        z-index: -1;
-    }
+  </video>
 
-</style>
-<!-- partial:index.partial.html -->
-<div class="Container">
-  <!-- last card -->
-  <div class="Picture-video" id="video">
-    <video width="300" height="480" controls>
-      <source src="Tripshividmid.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="video-button" style="display: flex; justify-content: center; margin-top: 10px;">
-      <a href="index2.html" class="btn">Go To Q/A Page</a>
+  <div class="Container">
+
+    <!-- Video Card -->
+    <div class="Picture-video" id="video">
+      <video controls>
+        <source src="Tripshividmid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-button">
+        <a href="index2.html" class="btn">Go To Q/A Page</a>
+      </div>
     </div>
-  </div>
-  <!-- other cards -->
-  
 
-  <div class="Picture">
-    <img class="Picture-img" src="Tripshi1.jpg" alt="" />
+    <!-- Image Cards -->
+    <div class="Picture"><img class="Picture-img" src="Tripshi1.jpg" alt="" /></div>
+    <div class="Picture"><img class="Picture-img" src="Tripshi2.jpg" alt="" /></div>
+    <div class="Picture"><img class="Picture-img" src="Tripshi3.jpg" alt="" /></div>
+    <div class="Picture"><img class="Picture-img" src="Tripshi4.jpg" alt="" /></div>
+    <div class="Picture"><img class="Picture-img" src="Tripshi5.jpg" alt="" /></div>
+    <div class="Picture"><img class="Picture-img" src="Tripshi6.jpg" alt="" /></div>
+    <div class="Picture"><img class="Picture-img" src="Tripshi7.jpg" alt="" /></div>
+    <div class="Picture"><img class="Picture-img" src="Tripshi8.jpg" alt="" /></div>
+
   </div>
-  <div class="Picture">
-    <img class="Picture-img" src="Tripshi2.jpg" alt="" />
-  </div>
-  <div class="Picture">
-    <img class="Picture-img" src="Tripshi3.jpg" alt="" />
-  </div>  
-  <div class="Picture">
-    <img class="Picture-img" src="Tripshi4.jpg" alt="" />
-  </div>
-  <div class="Picture">
-    <img class="Picture-img" src="Tripshi5.jpg" alt="" />
-  </div>
-  <div class="Picture">
-    <img class="Picture-img" src="Tripshi6.jpg" alt="" />
-  </div>
-  <div class="Picture">
-    <img class="Picture-img" src="Tripshi7.jpg" alt="" />
-  </div>
-  <div class="Picture">
-    <img class="Picture-img" src="Tripshi8.jpg" alt="" />
-  
-<!-- partial -->
+
   <script src="./script.js"></script>
+
 </body>
 </html>
