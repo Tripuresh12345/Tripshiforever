@@ -1,101 +1,148 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Date</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Date</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body, html {
-            height: 100%;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
 
-        #background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            z-index: -1;
-        }
+    #background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            padding: 20px;
-            text-align: center;
-        }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
 
-        .romantic-text {
-            font-size: 24px;
-            color: #fff;
-            margin-bottom: 20px;
-        }
+    .romantic-text {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
 
-        .options button {
-            padding: 10px 20px;
-            margin: 10px;
-            border: none;
-            border-radius: 8px;
-            background-color: #ff69b4;
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-        }
+    .options button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff69b4;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-        #thanks-message {
-            display: none;
-            animation: fadeIn 2s ease-in-out;
-        }
+    #thanks-message {
+      display: none;
+      animation: fadeIn 2s ease-in-out;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .gif-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,0.8);
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .gif-container img {
+      max-width: 90vw;
+      max-height: 60vh;
+      border-radius: 10px;
+    }
+
+    .gif-container button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #ff69b4;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <!-- Background video -->
-    <video autoplay muted loop id="background-video">
-        <source src="totoro-on-top-of-a-tree.1920x1080.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
 
-    <!-- Main content -->
-    <div class="container">
-        <div id="thanks-message" class="romantic-text"></div>
+<!-- Background video -->
+<video autoplay muted loop id="background-video">
+  <source src="totoro-on-top-of-a-tree.1920x1080.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
-        <div class="question-container">
-            <div class="question romantic-text">Ready for Online date?</div>
-            <div class="options">
-                <button onclick="redirectToIndex3()">Yes</button>
-                <button onclick="showThanksMessage()">No</button>
-            </div>
-        </div>
+<!-- Main container -->
+<div class="container">
+  <div id="thanks-message" class="romantic-text"></div>
+
+  <div class="question-container">
+    <div class="question romantic-text">Ready for Online date?</div>
+    <div class="options">
+      <button onclick="redirectToIndex3()">Yes</button>
+      <button onclick="showCatGif()">No</button>
     </div>
+  </div>
+</div>
 
-    <script>
-        function redirectToIndex3() {
-            window.location.href = "index3.html";
-        }
+<!-- JS Scripts -->
+<script>
+  function redirectToIndex3() {
+    window.location.href = "index3.html";
+  }
 
-        function showThanksMessage() {
-            const message = document.getElementById('thanks-message');
-            message.innerHTML = 'Thanks 😊💟.';
-            message.style.display = 'block';
-        }
-    </script>
+  function showCatGif() {
+    const gifContainer = document.createElement('div');
+    gifContainer.className = 'gif-container';
+
+    const gif = document.createElement('img');
+    gif.src = 'Cat Love GIF by Mochimons.gif'; // your cat GIF URL
+    gif.alt = 'Cute cat';
+
+    gifContainer.appendChild(gif);
+
+    const closeButton = document.createElement('button');
+    closeButton.innerText = 'Close';
+    closeButton.onclick = function () {
+      document.body.removeChild(gifContainer);
+    };
+
+    gifContainer.appendChild(closeButton);
+
+    document.body.appendChild(gifContainer);
+  }
+</script>
+
 </body>
 </html>
