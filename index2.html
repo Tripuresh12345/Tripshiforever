@@ -32,7 +32,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       padding: 20px;
       text-align: center;
       color: white;
@@ -93,6 +93,30 @@
       color: #fff;
       cursor: pointer;
     }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      align-items: center;
+    }
+
+    .video-item {
+      width: 100%;
+      border-radius: 10px;
+      max-height: 180px;
+      object-fit: cover;
+      box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    }
+
+    .center-message {
+      grid-column: span 3;
+      text-align: center;
+      margin: 20px 0;
+    }
   </style>
 </head>
 <body>
@@ -107,16 +131,32 @@
 <div class="container">
   <div id="thanks-message" class="romantic-text"></div>
 
-  <div class="question-container">
-    <div class="question romantic-text">Ready for Online date?</div>
-    <div class="options">
-      <button onclick="redirectToIndex3()">Yes</button>
-      <button onclick="showCatGif()">No</button>
+  <!-- Video Grid -->
+  <div class="video-grid">
+
+    <!-- First 3 Videos -->
+    <video class="video-item" src="Tripshivid1.mp4" autoplay muted loop></video>
+    <video class="video-item" src="Tripshivid2.mp4" autoplay muted loop></video>
+    <video class="video-item" src="Tripshivid3.mp4" autoplay muted loop></video>
+
+    <!-- Middle Text Section -->
+    <div class="question-container center-message">
+      <div class="question romantic-text">Ready for Online date?</div>
+      <div class="options">
+        <button onclick="redirectToIndex3()">Yes</button>
+        <button onclick="showCatGif()">No</button>
+      </div>
     </div>
+
+    <!-- Last 3 Videos -->
+    <video class="video-item" src="Tripshivid4.mp4" autoplay muted loop></video>
+    <video class="video-item" src="Tripshivid5.mp4" autoplay muted loop></video>
+    <video class="video-item" src="Tripshivid6.mp4" autoplay muted loop></video>
+
   </div>
 </div>
 
-<!-- JS Scripts -->
+<!-- JavaScript -->
 <script>
   function redirectToIndex3() {
     window.location.href = "index3.html";
