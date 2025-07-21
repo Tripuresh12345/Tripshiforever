@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Tripshiforever</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ Important for mobile -->
-  <link rel="stylesheet" href="./style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Required for mobile -->
+
   <style>
     body {
       margin: 0;
@@ -39,26 +39,39 @@
       gap: 15px;
     }
 
-    .Picture, .Picture-video {
-      width: 90%;
-      max-width: 300px;
+    .Picture,
+    .Picture-video {
+      position: relative;
       margin: 10px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
+      transition: transform 0.5s ease;
+      transform: scale(1);
+      border-radius: 15px;
       overflow: hidden;
+      width: 250px;
+      height: auto;
+    }
+
+    .Picture:hover {
+      transform: scale(1.05);
     }
 
     .Picture-img {
       width: 100%;
       height: auto;
-      border-radius: 10px;
       display: block;
+      border-radius: 12px;
     }
 
     .Picture-video video {
       width: 100%;
       height: auto;
-      border-radius: 10px;
+      border-radius: 12px;
+    }
+
+    .video-button {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0 15px;
     }
 
     .btn {
@@ -68,16 +81,38 @@
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
+      font-size: 16px;
     }
 
     .btn:hover {
       background-color: #ff4e9b;
     }
 
-    .video-button {
-      display: flex;
-      justify-content: center;
-      margin: 10px 0 15px;
+    /* ✅ Mobile responsive fix */
+    @media screen and (max-width: 768px) {
+      .Picture,
+      .Picture-video {
+        width: 90vw !important;
+        height: auto !important;
+        transform: scale(1) !important;
+      }
+
+      .Picture-img,
+      .Picture-video video {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+
+      .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+
+      .video-button {
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -114,8 +149,6 @@
     <div class="Picture"><img class="Picture-img" src="Tripshi8.jpg" alt="" /></div>
 
   </div>
-
-  <script src="./script.js"></script>
 
 </body>
 </html>
