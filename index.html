@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SomeWords</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+   <h1 style="text-align: center; margin-top: 20px; color: white; background: rgba(0, 0, 0, 0.5); padding: 10px;">Slide the pictures</h1>
+
+  <video autoplay muted loop id="background-video">
+    <source src="cinnamoroll-flying-in-clouds.1920x1080.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<style>
+    #background-video {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+    }
+
+</style>
+<!-- partial:index.partial.html -->
+<div class="Container">
+  <!-- last card -->
+  <div class="Picture-video" id="video">
+    <video width="300" height="480" controls>
+      <source src="Annuvid2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-button" style="display: flex; justify-content: center; margin-top: 10px;">
+      <a href="index2.html" class="btn">Go To Q/A Page</a>
+    </div>
+  </div>
+  <!-- other cards -->
+  
+
+  <div class="Picture">
+    <img class="Picture-img" src="Annu1.jpg" alt="" />
+  </div>
+  <div class="Picture">
+    <img class="Picture-img" src="Annu2.jpg" alt="" />
+  </div>
+  <div class="Picture">
+    <img class="Picture-img" src="Annu3.jpg" alt="" />
+
+<!-- partial -->
+  <script src="./script.js"></script>
+</body>
+</html>
